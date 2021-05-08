@@ -1,11 +1,11 @@
 const mongoose = require('mongoose');
 
 const weatherSchema = mongoose.Schema ({
-  Longitude: { type: String, required: true },
-  Latitude: { type: String, required: true },
+  Longitude: { type: Number, required: true },
+  Latitude: { type: Number, required: true },
   forecast_time: { type: String, required: true },
-  Temperature_Celsius: { type: String, required: true }, 
-  Precipitation_Rate: { type: String, required: true }
+  Temperature_Celsius: { type: Number, required: true }, 
+  Precipitation_Rate: { type: Number, required: true }
 });
 
-module.exports = mongoose.model('Weather', weatherSchema);
+module.exports = mongoose.model('weather', weatherSchema);
