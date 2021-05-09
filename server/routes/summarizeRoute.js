@@ -16,20 +16,26 @@ sumRouter.get('/', async (req, res) => {
 
 
 function calcSummarize(data) {
-  var sumTemp = 0, sumPrec = 0, cnt = 0;
+  var sumTemp = 0, sumPrec = 0, cnt = 0, minPrec = Number.MAX_VALUE, maxPrec = Number.MIN_VALUE;
   data.forEach(datum => {
     sumTemp += datum.Temperature_Celsius;
     sumPrec += datum.Precipitation_Rate;
     cnt++;
+    if (datum.Precipitation_Rate < minPrec) {
+      minPrec = datum.Precipitation_Rate;
+    }
+    if (maxPrec < datum.Precipitation_Rate) {
+      maxPrec = datum.Precipitation_Rate;
+    }
   });
   var result = {
     max: {
       "Temperature": data[data.length - 1].Temperature_Celsius,
-      "Precipitation": 20,
+      "Precipitation": maxPrec,
     },
     min: {
       "Temperature": data[0].Temperature_Celsius,
-      "Precipitation": 20,
+      "Precipitation": minPrec,
     },
     avg: {
       "Temperature": sumTemp / cnt,
