@@ -4,7 +4,8 @@ const connectTodb = require('./server/connectToDB');
 
 var express = require('express');
 var app = express();
-app.listen(3000, () => {
+var port = process.env.PORT || 3000;
+app.listen(port, () => {
   console.log('Server listening on 3000');
 });
 
