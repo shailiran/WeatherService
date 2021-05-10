@@ -28,8 +28,8 @@ function calcSummarize(data) {
       "Precipitation": minPrec,
     },
     avg: {
-      "Temperature": sumTemp / cnt,
-      "Precipitation": sumPrec / cnt
+      "Temperature": (sumTemp / cnt).toFixed(2),
+      "Precipitation": (sumPrec / cnt).toFixed(2)
     }
   }
   return result;
