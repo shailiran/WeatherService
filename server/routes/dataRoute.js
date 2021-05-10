@@ -1,11 +1,11 @@
 const express = require('express');
-const Weather = require('../modles/Weather');
+const Forecast = require('../modles/Forecast');
 
 const dataRouter = express.Router();
 dataRouter.get('/', async (req, res) => {
   try {
     const { lat, lon } = req.query;
-    var data = await Weather.find({ Longitude: lon, Latitude: lat });
+    var data = await Forecast.find({ Longitude: lon, Latitude: lat });
     res.json(data.map(datum => ({
       ForecastTime: datum.forecast_time, 
       Temperature: datum.Temperature_Celsius, 
