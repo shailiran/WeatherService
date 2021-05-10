@@ -15,7 +15,7 @@ function calcSummarize(data) {
       minTemp = datum.Temperature_Celsius;
     }
     if (maxTemp < datum.Temperature_Celsius) {
-      maxPrec = datum.Temperature_Celsius;
+      maxTemp = datum.Temperature_Celsius;
     } 
   });
   var result = {
