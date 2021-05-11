@@ -8,6 +8,6 @@ A web service that gives us the weather forecast for a specific location.
 * Summarize Route: https://my-cool-weather-service.herokuapp.com/weather/summarize?lat=-90&lon=-171
 
 ## :cloud: Technologies
-* Language: Node.js
+* Language: JavaScript
 * Server: Express
 * Data Base: Mongodb
